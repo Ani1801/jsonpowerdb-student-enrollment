@@ -1,0 +1,25 @@
+# Credentials and local environment configuration
+config.js
+.env
+.env.*
+!.env.example
+
+# Dependencies
+node_modules/
+
+# IDE and Editor specific files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.suo
+*.ntvs*
+*.njsproj
+
+# Operating system temporary files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+*.log
+

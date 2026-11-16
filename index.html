@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Enrollment Form</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- jQuery Library (Required by JPDB Commons) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    
+    <!-- Official JsonPowerDB JavaScript Helper Library -->
+    <script src="https://login2explore.com/jpdb/resources/js/0.0.4/jpdb-commons.js"></script>
+</head>
+<body>
+    <div class="page-container">
+        <main class="form-card">
+            <!-- Header Section -->
+            <header class="form-header">
+                <div class="header-icon" aria-hidden="true">🎓</div>
+                <h1 class="header-title">Student Enrollment Form</h1>
+                <p class="header-subtitle">Student Records Management &bull; JsonPowerDB</p>
+            </header>
+
+            <!-- Status / Notification Area -->
+            <div id="status-message" class="status-box" role="status" aria-live="polite">
+                <span class="status-icon" id="status-icon">ℹ️</span>
+                <span class="status-text" id="status-text">Enter Student Roll-No to check existing records or add a new entry.</span>
+            </div>
+
+            <!-- Enrollment Form -->
+            <form id="student-form" autocomplete="off" onsubmit="return false;">
+                <div class="form-grid">
+                    <!-- 1. Roll-No (Primary Key) -->
+                    <div class="form-group">
+                        <label for="Roll-No" class="form-label">
+                            Roll-No <span class="required-badge">(Primary Key)</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            id="Roll-No" 
+                            name="Roll-No" 
+                            class="form-control" 
+                            placeholder="e.g. 101" 
+                            required 
+                            autofocus
+                        >
+                        <span class="help-text">Type Roll-No and press Enter or Tab to search.</span>
+                    </div>
+
+                    <!-- 2. Full-Name -->
+                    <div class="form-group">
+                        <label for="Full-Name" class="form-label">
+                            Full-Name <span class="required-star">*</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            id="Full-Name" 
+                            name="Full-Name" 
+                            class="form-control" 
+                            placeholder="e.g. John Doe" 
+                            disabled 
+                            required
+                        >
+                    </div>
+
+                    <!-- 3. Class -->
+                    <div class="form-group">
+                        <label for="Class" class="form-label">
+                            Class <span class="required-star">*</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            id="Class" 
+                            name="Class" 
+                            class="form-control" 
+                            placeholder="e.g. 10th-A / CS-1" 
+                            disabled 
+                            required
+                        >
+                    </div>
+
+                    <!-- 4. Birth-Date -->
+                    <div class="form-group">
+                        <label for="Birth-Date" class="form-label">
+                            Birth-Date <span class="required-star">*</span>
+                        </label>
+                        <input 
+                            type="date" 
+                            id="Birth-Date" 
+                            name="Birth-Date" 
+                            class="form-control" 
+                            disabled 
+                            required
+                        >
+                    </div>
+
+                    <!-- 5. Address -->
+                    <div class="form-group">
+                        <label for="Address" class="form-label">
+                            Address <span class="required-star">*</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            id="Address" 
+                            name="Address" 
+                            class="form-control" 
+                            placeholder="e.g. 123 Main St, Springfield" 
+                            disabled 
+                            required
+                        >
+                    </div>
+
+                    <!-- 6. Enrollment-Date -->
+                    <div class="form-group">
+                        <label for="Enrollment-Date" class="form-label">
+                            Enrollment-Date <span class="required-star">*</span>
+                        </label>
+                        <input 
+                            type="date" 
+                            id="Enrollment-Date" 
+                            name="Enrollment-Date" 
+                            class="form-control" 
+                            disabled 
+                            required
+                        >
+                    </div>
+                </div>
+
+                <!-- Form Action Buttons -->
+                <div class="button-group">
+                    <button type="button" id="btn-save" class="btn btn-save" disabled>
+                        <span class="btn-icon">💾</span> Save
+                    </button>
+                    <button type="button" id="btn-update" class="btn btn-update" disabled>
+                        <span class="btn-icon">🔄</span> Update
+                    </button>
+                    <button type="button" id="btn-reset" class="btn btn-reset" disabled>
+                        <span class="btn-icon">✖</span> Reset
+                    </button>
+                </div>
+            </form>
+
+            <!-- Configuration Helper Banner -->
+            <footer class="form-footer">
+                <small>Connected to JPDB: <strong>SCHOOL-DB</strong> &bull; <strong>STUDENT-TABLE</strong></small>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Local Configuration (Ignored by Git) -->
+    <script src="config.js"></script>
+
+    <!-- Application Script -->
+    <script src="script.js"></script>
+</body>
+</html>
+
